@@ -14,7 +14,7 @@ class LoginController(AbstractLoginController):
         self._sql_operations = SqlOperations()
 
     @pyqtSlot(str, str)
-    def on_login_request(self, user_name, password) -> str:
+    def on_login_request(self, user_name, password) -> tuple[bool, str]:
 
         login_model = LoginModel()
         login_model.user_name = user_name
